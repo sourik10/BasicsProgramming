@@ -4,7 +4,7 @@
 #define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
 using namespace std;
 
-
+//https://takeuforward.org/data-structure/count-frequency-of-each-element-in-the-array/
 //bestApproach (using hashmap/map in stl)
 //time O(n) , space O(n)
 void frequency(vector<int>&ar){
@@ -21,7 +21,7 @@ int main(){
 	vector<int>ar={10,5,10,15,10,5};
 	frequency(ar);
 	vector<int>arr={-1,-2,-3,4,0};
-  frequency(arr);
+  	frequency(arr);
 	
 }
 	
