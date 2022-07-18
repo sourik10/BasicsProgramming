@@ -5,9 +5,13 @@
 using namespace std;
 
 //https://takeuforward.org/data-structure/reverse-a-given-array/
+
 //bruteForce approach - using extra array of size n(Same size)
 //time O(n),space O(n)
 
+void printAr(vector<int>&ar){
+	for(int i=0;i<ar.size();i++) cout<<ar[i]<<" ";
+}
 
 //better approach (iterative),time O(n),space O(1)
 void reverseAr(vector<int>&ar){
@@ -28,6 +32,9 @@ void revereseRec(vector<int>&ar,int start,int end){
   printAr(ar);
 }
 
+void printAr(vector<int>&ar){
+	for(int i=0;i<ar.size();i++) cout<<ar[i]<<" ";
+}
 int main(){
 	vector<int>ar={4,5,0,7,19,12,8};
 	vector<int>arr={-1,-2,-3,4,0};
