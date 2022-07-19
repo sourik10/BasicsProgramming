@@ -4,6 +4,7 @@
 #define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
 using namespace std;
 
+//https://takeuforward.org/data-structure/rotate-array-by-k-elements-block-swap-algorithm/
 void printAr(vector<int>&ar){
 	for(int i=0;i<ar.size();i++) cout<<ar[i]<<" ";
 }
