@@ -3,7 +3,7 @@
 #define ull             unsigned long long
 #define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));
 using namespace std;
-
+//https://takeuforward.org/data-structure/find-all-repeating-elements-in-an-array/
 //brute force approach 
 //time O(nlog n) + o(n) ,for sorting and linearly traversing the whole array
 //space O(1)
