@@ -20,3 +20,24 @@ string decimalBinary(int n){
     return ans;
 }
 
+//octal to decimal
+int octalDecimal(int n){
+    int dec=0,i=0;
+    while(n){
+        int rem=n%10;
+        dec+=rem*pow(8,i++);
+        n/=10;
+    }
+    return dec;
+}
+
+//decimal to Octal
+string decimalOctal(int n){
+    string str="";
+    while(n){
+        str.push_back(n%8);
+        n/=8;
+    }
+    for(int i=0;i<str.size()/2;i++) swap(str[i],str[str.size()-1-i]);
+    return str;
+}
