@@ -38,3 +38,18 @@ void reverse(int ar[],int n){
     for(int i=0;i<n;i++) cout<<ar[i]<<" ";
 }
 
+//Rearrange array in increasing-decreasing order
+void sort(int ar[],int n){ //bubble sort
+    for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-i-1;j++){
+            if(ar[j]>ar[j+1]) swap(ar[j],ar[j+1]);
+        }
+    }
+    
+    for(int i=0;i<n/2;i++){
+        cout<<ar[i]<<" ";
+    }
+    for(int i=n-1;i>=n/2;i--){
+        cout<<ar[i]<<" ";
+    }
+}
