@@ -68,4 +68,3 @@ int binarySearch(int ar[],int n,int k){
    return -1;
 }
 
-
