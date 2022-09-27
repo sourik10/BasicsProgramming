@@ -42,3 +42,30 @@ void insertionSort(int ar[],int n){
 
 //quick sort
 //merge sort
+
+
+//searching algorithms
+//binary search vs linear search
+//https://www.geeksforgeeks.org/linear-search-vs-binary-search/
+
+//linearSearch,O(n)
+int linearSearch(int ar[],int n,int k){
+   for(int i=0;i<n;i++){
+      if(ar[i]==k) return i;
+   }
+   return -1;
+}
+
+//binarySearch,O(log n)
+int binarySearch(int ar[],int n,int k){
+   int l=0,h=n-1;
+   while(l<=h){
+      int mid=(l+h)/2;
+      if(ar[mid]==k) return mid;
+      else if(ar[mid]<k) l=mid+1;
+      else h=mid-1;
+   }
+   return -1;
+}
+
+
