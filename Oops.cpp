@@ -20,8 +20,15 @@ class Student{
         cout<<"Parameterised construtor called"<<endl;
     }
     
-    void details(){  //member fucntions
-        cout<<roll<<" "<<name<<" "<<gender<<endl;
+    
+    //Student(Student &xyz){
+     //   roll=xyz.roll;
+     //   name=xyz.name;
+     //   gender=xyz.gender;
+    //}
+    
+    void details(){  //member fucntions,this pointer in cpp
+        cout<<this->roll<<" "<<this->name<<" "<<this->gender<<endl;
     }
 };
 
@@ -34,6 +41,10 @@ int main() {
  Student s2=Student(101,"Ayan",true);
  s2.details();
  
+ /* //copy Constructor
+ Student s3(s2);
+ s3.details();
+ */
  
     return 0;
 }
