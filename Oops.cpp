@@ -48,3 +48,74 @@ int main() {
  
     return 0;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include<bits/stdc++.h>
+using namespace std;
+class Student{
+    private:
+    string name;
+    
+    public:
+    int roll;
+    int salary;
+    
+    public: //encapsulation
+    void setName(string name){ //setter function in cpp
+        this->name=name;
+    }
+    
+    string getName(){  //getter function in cpp
+        return name;
+    }
+    
+};
+class Abstraction{  //abstraction
+    private:
+    int x,y;
+    
+    public:
+    void set(int a,int b){
+        x=a;
+        y=b;
+    }
+    void display(){
+        cout<<x<<endl;
+        cout<<y<<endl;
+    }
+};
+
+//inheritance in cpp
+class Bike{
+    public:
+    string name;
+    int price;
+    void plssss(){
+        cout<<999999999999<<endl;
+    }
+};
+class Ktm:public Bike{
+    int speed=900;
+    void pace(){
+        cout<<speed<<endl;
+    }
+};
+class Pulsar: public Bike{
+    int yrs=10;
+    void mileage{
+        cout<<yrs<<endl;
+    }
+};
+
+int main(){
+    Student s;
+    s.setName("Sourik");
+    cout<<s.getName()<<endl;
+    
+    Abstraction a;
+    a.set(10,20);
+    a.display();
+    
+    Ktm k;
+    k.pace();
+}
