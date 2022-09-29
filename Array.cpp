@@ -53,3 +53,10 @@ void sort(int ar[],int n){ //bubble sort
         cout<<ar[i]<<" ";
     }
 }
+
+//rotate by K elements
+void rotateByK(vector<int>&v,int k){ //rotate by right
+    reverse(v.begin(),v.begin()+k);
+    reverse(v.begin()+k,v.end());
+    reverse(v.begin(),v.end());
+}
