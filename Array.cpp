@@ -71,4 +71,43 @@ double median(vector<int>&v){
     return (double)(v[n/2]+v[(n/2)-1])/2;
 }
 
+//remove duplicates from a sorted array
+int removeDuplicates(vector<int>&ar){
+    int n=ar.size();
+    int i=0;
+    for(int j=1;j<n;j++){
+        if(ar[i]!=ar[j]){
+            i++;
+            ar[i]=ar[j];
+        }
+    }
+    return i+1;
+}
+
+//remove duplicates from a unsorted array
+void removeDuplicatesUnsorted(vector<int>&ar){
+    int n=ar.size();
+    unordered_map<int,int>mp;
+    for(int i=0;i<n;i++){
+        if(mp.find(ar[i])==mp.end()){
+            mp[ar[i]]++;
+            cout<<ar[i]<<",";
+        }
+    }
+}
+
+//adding elements
+void insertBegin(vector<int>&ar,int &k){
+    int n=ar.size();
+    for(int i=n-1;i>=0;i--){
+        ar[i+1]=ar[i];
+    }
+    ar[0]=k;
+}
+void insertEnd(vector<int>&ar,int &k){
+    int n=ar.size();
+    ar[n]=k;
+}
+
+
 
