@@ -93,6 +93,30 @@ int lcm(int a,int b){
     return a*b/gcd(a,b);
 }
 
+//fibonacci Series
+#include <bits/stdc++.h> 
+using namespace std;
+
+int fibonacciNumber(int n){
+    if(n==0 || n==1) return n;
+    return fibonacciNumber(n-1)+fibonacciNumber(n-2);
+}
+
+int main() {
+   int n=8;
+   //cout<<fibonacciNumber(n)<<endl;
+   int a=0,b=1,c;
+   cout<<a<<" "<<b<<" ";
+   for(int i=2;i<n;i++){
+       c=a+b;
+       cout<<c<<" ";
+       a=b;
+       b=c;
+   }
+}
+
+
+
 //factorial of  number
 int factorial(int n){
     int ans=1;
