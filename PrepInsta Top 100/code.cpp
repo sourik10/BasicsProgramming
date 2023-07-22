@@ -96,6 +96,66 @@ bool palindrome(string s){
     else return false;
 }
 
+//check armstrong
+bool armstrong(int n){
+	string s=to_string(n);
+	int len=s.length();
+	int tmp=n,sm=0;
+	while(n){
+		sm+=pow(n%10,len);
+		n/=10;
+	}
+	if(tmp==sm) return 1;
+	return 0;
+}
+
+//fibonacci iterative 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+   int n=10;
+   int a=0,b=1;
+   cout<<a<<" "<<b;
+   for(int i=2;i<n;i++){
+   	int nxt=a+b;
+   	a=b;
+   	b=nxt;
+   	cout<<" "<<nxt<<" ";
+   }
+}
+
+//recursive
+int fib(int n){
+	if(n<=1) return n;
+	return fib(n-1) + fib(n-2);
+}
+
+//dp appraoch
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n=10;
+    int dp[n+1];
+    dp[0]=0,dp[1]=1;
+    for(int i=2;i<n;i++){
+    	dp[i]=dp[i-1]+dp[i-2];
+    }
+    for(int i=0;i<n;i++) cout<<dp[i]<<endl;
+
+    /*
+    dp[n]=dp[n-1]+dp[n-2];
+    cout<<dp[n]<<endl;	 */
+}
+
+//factorial
+int fac(int n){
+	if(n==1) return n;
+	return n*fac(n-1);
+}
+
+//power of a number(modular expo)
 
 
 
