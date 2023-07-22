@@ -213,8 +213,30 @@ int main() {
 	cout<<checkPerfect(28);
 }
 
-//
+//gcd and lcm
+int gcd(int a,int b){
+	if(a==0) return b;
+	return gcd(b%a,a);
+}
 
+int lcm(int a,int b){return a*b/gcd(a,b);}
+
+//largest and smallest in an array
+int largest(int *ar,int n){
+  int tmp=INT_MIN;
+  for(int i=0;i<n;i++){
+    if(ar[i]>tmp) tmp=ar[i];
+  }
+  return tmp;
+}
+
+int smallest(int *ar,int n){
+  int tmp=INT_MAX;
+  for(int i=0;i<n;i++){
+    if(ar[i]<tmp) tmp=ar[i];
+  }
+  return tmp;
+}
 
 
 
