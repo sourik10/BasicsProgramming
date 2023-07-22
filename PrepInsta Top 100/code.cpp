@@ -156,6 +156,64 @@ int fac(int n){
 }
 
 //power of a number(modular expo)
+int exponent(int x,int n){
+	int rs=1;
+	while(n>0){
+		if(n%2==1) rs=rs*x;
+		n=n>>1;
+		x=x*x;
+	}
+	return rs;
+}
+
+//modular exponentiation
+int modularExponentiation(int x, int n, int m) {
+	int rs=1;
+	while(n>0){
+		if(n%2==1) rs=(1LL*rs*(x%m))%m;
+		n=n>>1;
+		x=(1LL*(x%m)*(x%m))%m;
+	}	
+	return rs;
+}
+
+//factors of a given number and factorial of a number
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> factor(int num){
+
+	vector<int>v;
+	for(int i=1;i<=sqrt(num);i++){
+		if(num%i==0){
+			if(i*i==num) v.push_back(i);
+			else{
+				v.push_back(i);
+				v.push_back(num/i);
+			}
+		}
+	}
+	sort(v.begin(),v.end());
+	return v;
+}
+
+bool checkPerfect(int num){
+	vector<int>tmp=factor(num);
+	tmp.pop_back();
+	int rs=0;
+	for(auto it:tmp) rs+=it;
+	if(rs==num) return true;
+	else return false;
+}
+
+int main() {
+    vector<int>tmp=factor(28);
+    for(auto it:tmp) cout<<it<<" ";
+    cout<<endl;
+	cout<<checkPerfect(28);
+}
+
+//
 
 
 
