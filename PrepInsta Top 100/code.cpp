@@ -27,6 +27,7 @@ int maxOf3(int a,int b,int c){
     return res;
 }
 
+
 //leap year check
 string leapYear(int yr){
     if((yr%400)==0 || (yr%4==0 && yr%100!=0)) return "leap year";
@@ -237,6 +238,94 @@ int smallest(int *ar,int n){
   }
   return tmp;
 }
+
+//second smallest and largest
+void secondLargestSmallest(vector<int>&arr){
+    int n=arr.size();
+    int small=INT_MAX,second_small=INT_MAX;
+    int large=INT_MIN,second_large=INT_MIN;
+    
+   for(int i=0;i<n;i++)
+    {
+        small=min(small,arr[i]);
+        large=max(large,arr[i]);
+    }
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]<second_small && arr[i]!=small)
+            second_small=arr[i];
+        if(arr[i]>second_large && arr[i]!=large)
+            second_large=arr[i];
+    }
+
+    cout<<second_small<<" "<<second_large<<endl;
+    
+}
+
+//reverse vector(using swap function)
+void reverseVector(vector<int>&ar){
+	int l=0,h=ar.size()-1;
+	while(l<h){
+		swap(ar[l++],ar[h--]);
+	}
+}
+
+//count frequency of elements(using unorderedMap) 
+void countFrequency(vector<int>&ar){
+	unordered_map<int,int>mp;
+	for(int i=0;i<ar.size();i++){
+		mp[ar[i]]++;
+	}
+	for(auto it:mp){
+		cout<<it.first<<" "<<it.second<<endl;
+	}
+}
+
+//count frequency (using visited array)
+void countFrequency(vector<int>&ar){
+	int n=ar.size();
+	vector<bool>visited(n,false);
+
+	for(int i=0;i<n;i++){
+		if(visited[i]==true) continue;
+
+		int ct=1;
+		for(int j=i+1;j<n;j++){
+			if(ar[i]==ar[j]){
+				ct++;
+				visited[j]=true;
+			}
+		}
+		cout<<ar[i]<<" "<<ct<<endl;
+	}
+}
+
+//search (binary) -- time O(logn)
+int search(vector<int>&ar,int k){
+	int n=ar.size();
+	int l=0,h=ar.size()-1,ans=-1,mid;
+	while(l<=h){
+		mid=(l+h)/2;
+		if(ar[mid]>k) h=mid-1;
+		else if(ar[mid]<k) l=mid+1;
+		else{
+			ans=mid; break;
+		}
+	}
+	return ans;
+}
+
+//search(linear) -- time O(n)
+int search(vector<int>&arr,int k){
+for (int i = 0; i < n; i++) {
+		if (arr[i] == k) {
+			ans = i;
+			break;
+		}
+	}
+	return ans;
+}
+
 
 
 
